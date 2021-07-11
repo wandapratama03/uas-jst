@@ -6,7 +6,7 @@ const model = require('./sdk/model.js');
 
 // Bot Setting
 const TelegramBot = require('node-telegram-bot-api');
-const token = '1875119020:AAHGtM9gl6gdSqN7UOQwSFq207_CLw0Ic3o'
+const token = '1868031975:AAEyHzMZqFvCSMesdZ_Da775AlEs9X6ufIo'
 const bot = new TelegramBot(token, {polling: true});
 
 
@@ -26,7 +26,7 @@ state = 0;
 bot.onText(/\/predict/, (msg) => { 
     bot.sendMessage(
         msg.chat.id,
-        `input nilai x|y|z example 4|3|2`
+        `input nilai x1|x2|x3 example 4|3|2`
     );   
     state = 1;
 });
@@ -46,15 +46,15 @@ bot.on('message', (msg) => {
         ).then((jres)=>{
             bot.sendMessage(
                 msg.chat.id,
-                `nilai x yang diprediksi adalah ${jres[0]} `
+                `nilai x1 yang diprediksi adalah ${jres[0]} `
             );   
             bot.sendMessage(
                 msg.chat.id,
-                `nilai y yang diprediksi adalah ${jres[1]} `
+                `nilai x2 yang diprediksi adalah ${jres[1]} `
             );   
             bot.sendMessage(
                 msg.chat.id,
-                `nilai z yang diprediksi adalah ${jres[2]} `
+                `nilai x3 yang diprediksi adalah ${jres[2]} `
          );   
 })
     }else{
