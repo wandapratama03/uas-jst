@@ -16,7 +16,7 @@ bot.onText(/\/start/, (msg) => {
     bot.sendMessage(
         msg.chat.id,
         `hello ${msg.chat.first_name}, welcome...\n
-        click  /predict to know about x y and z`
+        click  /predict to know about x1 x2 and x3`
     );   
 });
 
